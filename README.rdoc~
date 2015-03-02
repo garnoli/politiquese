@@ -1,0 +1,40 @@
+== README
+
+O Politique-se tem o objetivo de ser um ambiente para discussão em torno de assuntos aos
+quais as pessoas se identifiquem. O indivíduo logado no sistema poderá escrever algo novo e
+colocá-lo para julgamento, ler o que já foi escrito e julgar os textos de outros usuários do sistema. 
+
+O sistema terá um ambiente de interação onde causaria discussões permanentes. Dessa forma, o fato de haver a possibilidade de julgamento pelos botões politizou e despolitizou já seria algo de
+discussão, pois cada um julgaria de forma subjetiva o assunto que foi politizado. Com isso, a partir
+da interação criada, o usuário poderá também verificar dois tipos de grupos no sistema: um grupo é
+o dos que mais politizam no sistema, ou seja, aqueles que mais escrevem ou que leem politizadas; o
+outro seria o grupo ao qual o indivíduo teria assuntos discutidos em comum. Este último, seria uma
+forma de identificação do usuário com outros usuários do sistema a fim de gerar uma afinidade
+maior entre pessoas que estão em torno do debate de assuntos específicos. 
+
+Enfim, o politique-se acabaria por inserir as pessoas em discussões que as fariam conhecer melhor o seu local de trabalho, o próprio bairro e até o mundo. Por meio do politique-se, o indivíduo estaria ativo em assuntos importantes e que os levariam ao aumento de sua participação social. Inclusive, isso faria com que os cidadãos tomassem gosto pela própria política que os cerca.
+
+
+
+= Em breve instruções de instalação aqui
+
+Things you may want to cover:
+
+* Ruby version
+
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
+
