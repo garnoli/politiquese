@@ -1,0 +1,2 @@
+module PolitizacaosHelper
+end

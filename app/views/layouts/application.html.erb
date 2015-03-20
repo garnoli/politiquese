@@ -31,10 +31,11 @@
 </div>
 
 
+<% flash.each do |name,msg| %>
+  <%= content_tag(:div, msg, class: "alert-alert-info" ) %>
+<% end %>
 
 
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
 
 <div class="container">
   <%= yield %>
