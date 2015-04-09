@@ -1,0 +1,10 @@
+<%= form_for([@politizacao, @politizacao.politizous.build]) do |f| %>
+<p>
+  <%= f.label :body %><br>
+  <%= f.text_area :body %><br>
+</p>
+<br>
+<p>
+  <%= f.submit %>
+</p>
+<% end %>

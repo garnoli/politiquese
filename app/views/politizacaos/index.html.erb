@@ -1,13 +1,15 @@
-<p id="notice"><%= notice %></p>
+<p><%=Date.today %></p>
 
-<h1>Listing Politizacaos</h1>
+<h1>Politizações</h1>
 
-<table>
+<table class="table table-striped">
+
   <thead>
     <tr>
-      <th>Title</th>
+      <th>Título</th>
       <th>Body</th>
-      <th colspan="3"></th>
+      <th>Pontuação</th>
+
     </tr>
   </thead>
 
@@ -15,15 +17,23 @@
     <% @politizacaos.each do |politizacao| %>
       <tr>
         <td><%= politizacao.title %></td>
-        <td><%= politizacao.body %></td>
+        <td><%= simple_format(politizacao.body) %></td>
+        <td><%= politizacao.ponto%></td>
         <td><%= link_to 'Show', politizacao %></td>
         <td><%= link_to 'Edit', edit_politizacao_path(politizacao) %></td>
         <td><%= link_to 'Destroy', politizacao, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
       </tr>
     <% end %>
   </tbody>
-</table>
+  </table>
 
 <br>
 
-<%= link_to 'New Politizacao', new_politizacao_path %>
+<%= button_to "Nova Politização", new_politizacao_path, :class => "btn btn-primary", :method => :get %>
+
+
+
+
+
+

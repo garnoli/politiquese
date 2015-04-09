@@ -1,0 +1,13 @@
+<div class="despolitizou clearfix">
+  <div class="despolitizou_content">
+
+    <p class="despolitizou_body"> <%= despolitizou.body %></p>
+    <p class="comment_time"> <%= time_ago_in_words(despolitizou.created_at) %> Ago</p>
+  </div>
+
+  <p><%= link_to 'Delete', [despolitizou.politizacao, despolitizou],
+    method: :delete,
+    class: "button",
+    data: { confirm: 'Are you sure?' } %></p>
+
+</div>

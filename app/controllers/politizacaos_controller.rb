@@ -2,10 +2,19 @@ class PolitizacaosController < ApplicationController
   before_action :set_politizacao, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show] #adicionado para criar id do user
 
+  public
+  def search
+    if params[:search].present?
+      @politizacaos = Politizacao.search(params[:search])
+    else
+      @politizacaos = Politizacao.all
+    end
+  end
+
   # GET /politizacaos
   # GET /politizacaos.json
   def index
-    @politizacaos = Politizacao.all
+    @politizacaos = Politizacao.all.order('created_at DESC')
   end
 
   # GET /politizacaos/1
@@ -26,6 +35,8 @@ class PolitizacaosController < ApplicationController
   # POST /politizacaos.json
   def create
     @politizacao = current_user.politizacaos.build(politizacao_params)  #adicionado current para criar id do user
+
+    # @politizacao.ponto = pontuacao(@politizacao)
 
     respond_to do |format|
       if @politizacao.save
@@ -72,4 +83,8 @@ class PolitizacaosController < ApplicationController
     def politizacao_params
       params.require(:politizacao).permit(:title, :body)
     end
+
+    # def pontuacao(objeto)
+    # objeto.ponto= 2
+    # end
 end

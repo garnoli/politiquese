@@ -1,5 +1,15 @@
 Rails.application.routes.draw do
-  resources :politizacaos
+  resources :politizacaos do
+    resources :politizous
+    resources :despolitizous
+    collection do
+      get 'search'
+    end
+  end
+
+
+
+
 
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.

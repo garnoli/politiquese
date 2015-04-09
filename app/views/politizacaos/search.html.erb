@@ -1,0 +1,15 @@
+<div class="row">
+  
+  <div class="col-sm-6 col-md-3">   
+    <div class="thumbnail">
+    	<ul>
+    		<% @politizacaos.each do |politizacaos| %>
+  			<li>
+  			<%= link_to politizacaos.title, :action => 'show', :id => politizacaos.id %>
+    		</li>
+  			<% end %>
+  	  	</ul>
+    </div>
+  </div>
+  
+</div>

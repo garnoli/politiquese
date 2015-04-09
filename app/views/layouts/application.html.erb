@@ -1,21 +1,61 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Politiquese</title>
-  <link rel="stylesheet" href="http://railsgirls.com/assets/bootstrap.css">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Politiquese</title>  
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
+  <!-- [if lt IE 9] -->
+  <%= javascript_include_tag 'html5shiv.min.js', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'respond.min.js', 'data-turbolinks-track' => true %>      
+  <!--[endif] -->
+
 </head>
 <body>
 <br>
-  <div class="navbar navbar-fixed-top">
-  <div class="navbar-inner">
-    <div class="container">
-      <a class="brand" href="/">Link 1</a>
-      <ul class="nav">
-        <li class="active"><a href="/ideas">Link 2</a></li>
-      </ul>
+
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to "Politique-se", root_path, class: "navbar-brand" %> 
+    </div>
+
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+      <!-- lembrar de colocar aqui o if e else do usuario logado-->
+      
+        <li ><%=link_to "Politização", politizacaos_path, class: "active" %></li>
+        <li ><%=link_to "Julgamento", "#", class: "active" %></li>
+        <li ><%=link_to "Sobre o Politique-se", "#", class: "active" %></li>
+        <li ><%=link_to "Account", edit_user_registration_path %></li>
+        <li ><%=link_to "Sign in", "#", class: "active" %></li>
+            
+      </ul>      
+
+      <%= form_tag search_politizacaos_path, method: :get, class: "navbar-form navbar-right", role: "search" do %>
+        <p>
+          <%= text_field_tag :search, params[:search], class: "form_control" %>
+          <%= submit_tag "Search", name: nil, class: "btn btn-default" %>
+        </p>
+      <% end %>    
+      
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+ 
+
+
       <p class="navbar-text pull-right">
         <% if user_signed_in? %>
           Logged in as <strong><%= current_user.email %></strong>.
@@ -31,15 +71,16 @@
 </div>
 
 
+<%= render 'layouts/header' %>
 <% flash.each do |name,msg| %>
   <%= content_tag(:div, msg, class: "alert-alert-info" ) %>
 <% end %>
 
 
-
 <div class="container">
   <%= yield %>
 </div>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 
 <footer>
   <div class="container">

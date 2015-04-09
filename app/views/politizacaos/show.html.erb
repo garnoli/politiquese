@@ -1,14 +1,66 @@
-<p id="notice"><%= notice %></p>
+<p><%=Date.today %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @politizacao.title %>
-</p>
+<% if notice %>
 
-<p>
-  <strong>Body:</strong>
-  <%= @politizacao.body %>
-</p>
+<div class="alert alert-info alert-dismissible" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <strong><p id="notice"><%= notice %></p></strong>
+</div>
+<% end %>
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="raw">
+          <div class="table-responsive">
+            <div class="table">
+              <tbody>
+                <tr>
+                  <td><strong>Title:</strong></td>
+                  <td><h1><%= @politizacao.title %></h1></td>
+                </tr>
+                <tr>
+                  <td><strong>Body:</strong></td>
+                  <td><%= @politizacao.body %></td> <!--ver como funciona o simple_format no show-->
+                </tr>
+              </tbody>
+            </div>
+          </div>
 
-<%= link_to 'Edit', edit_politizacao_path(@politizacao) %> |
-<%= link_to 'Back', politizacaos_path %>
+    </div>
+  </div>
+  <div class="raw clearfix">
+        <div class="col-md-5">
+          <div id="politizou">
+            <h2>
+              <%= @politizacao.politizous.count %> Politizações
+            </h2>
+
+            <%= render @politizacao.politizous %>
+
+            <h3>Por que Politizou? </h3>
+            <%= render "politizous/form" %>
+
+          </div>
+        </div>
+
+
+        <div class="col-md-5">
+          <div id="despolitizou">
+            <h2>
+              <%= @politizacao.despolitizous.count %> Despolitizações
+            </h2>
+            <%= render @politizacao.despolitizous %>
+            <h3> Por que Despolitizou?</h3>
+            <%= render "despolitizous/form" %>
+
+          </div>
+        </div>
+      </div>
+      <br/>
+
+      <%= link_to 'Edit', edit_politizacao_path(@politizacao) %> |
+      <%= link_to 'Back', politizacaos_path %>
+
+    </div>
+  </div>
+
+</div>
