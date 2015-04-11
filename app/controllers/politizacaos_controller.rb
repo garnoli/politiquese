@@ -14,7 +14,7 @@ class PolitizacaosController < ApplicationController
   # GET /politizacaos
   # GET /politizacaos.json
   def index
-    @politizacaos = Politizacao.all.order('created_at DESC').paginate(page: params[:page], per_page: 5)
+    @politizacaos = Politizacao.all.order('created_at DESC').paginate(page: params[:page], per_page: 4)
     @politizous = Politizou.all
 
     @despolitizous = Despolitizou.all
@@ -48,7 +48,7 @@ class PolitizacaosController < ApplicationController
 
     respond_to do |format|
       if @politizacao.save
-        format.html { redirect_to @politizacao, notice: 'Politizacao was successfully created.' }
+        format.html { redirect_to @politizacao, notice: 'Politizacao foi criada com Sucesso.' }
         format.json { render :show, status: :created, location: @politizacao }
       else
         format.html { render :new }
@@ -62,7 +62,7 @@ class PolitizacaosController < ApplicationController
   def update
     respond_to do |format|
       if @politizacao.update(politizacao_params)
-        format.html { redirect_to @politizacao, notice: 'Politizacao was successfully updated.' }
+        format.html { redirect_to @politizacao, notice: 'Politizacao foi atualizada com Sucesso.' }
         format.json { render :show, status: :ok, location: @politizacao }
       else
         format.html { render :edit }
@@ -76,7 +76,7 @@ class PolitizacaosController < ApplicationController
   def destroy
     @politizacao.destroy
     respond_to do |format|
-      format.html { redirect_to politizacaos_url, notice: 'Politizacao was successfully destroyed.' }
+      format.html { redirect_to politizacaos_url, notice: 'Politizacao foi destruída com Sucesso.' }
       format.json { head :no_content }
     end
   end

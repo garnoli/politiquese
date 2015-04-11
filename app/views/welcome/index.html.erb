@@ -34,10 +34,10 @@
             <td><%= politizacao.politizous.count %></td> <td><%= politizacao.despolitizous.count %></td>
             <td>
               <div class="btn-group pull-right" role="group">
-                <%= link_to 'Show', politizacao, :class => "btn btn-default btn-sm"%>
+                <%= link_to 'Mostrar', politizacao, :class => "btn btn-default btn-sm"%>
                 <% if politizacao.user == current_user %>
-                <%= link_to 'Edit', edit_politizacao_path(politizacao), :class => "btn btn-default btn-sm" %>
-                <%= link_to 'Destroy', politizacao, method: :delete, data: { confirm: 'Are you sure?' },  :class => "btn btn-default btn-sm" %>
+                <%= link_to 'Editar', edit_politizacao_path(politizacao), :class => "btn btn-default btn-sm" %>
+                <%= link_to 'Apagar', politizacao, method: :delete, data: { confirm: 'Você tem certeza disso?' },  :class => "btn btn-default btn-sm" %>
                 <% end %>
               </div>
             </td>

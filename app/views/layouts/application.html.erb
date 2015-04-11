@@ -36,8 +36,8 @@
       <!-- lembrar de colocar aqui o if e else do usuario logado-->
 
         <li ><%=link_to "Politização", politizacaos_path, class: "active" %></li>
-        <li ><%=link_to "Sobre o Politique-se", "#", class: "active" %></li>
-        <li ><%=link_to "Account", edit_user_registration_path %></li>
+        <li ><%=link_to "Sobre o Politique-se", sobre_path, class: "active" %></li>
+        <li ><%=link_to "Sua Conta", edit_user_registration_path, class: "active"  %></li>
 
 
       </ul>
@@ -45,7 +45,7 @@
       <%= form_tag search_politizacaos_path, method: :get, class: "navbar-form navbar-right", role: "search" do %>
         <p>
           <%= text_field_tag :search, params[:search], class: "form_control" %>
-          <%= submit_tag "Search", name: nil, class: "btn btn-default" %>
+          <%= submit_tag "Procurar", name: nil, class: "btn btn-default" %>
         </p>
       <% end %>
 
