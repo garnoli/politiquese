@@ -29,6 +29,8 @@
     <% end %>
   </tbody>
   </table>
+
+  <%= will_paginate @politizacaos, renderer: BootstrapPagination:: Rails, previous_label: "Anterior", next_label: "Próxima", inner_window: 1, outer_window: 1 %>
   <br>
 <%= button_to "Nova Politização", new_politizacao_path, :class => "btn btn-primary", :method => :get %>
 <br/>

@@ -44,12 +44,9 @@ gem 'bootstrap-sass', '~> 3.3.3'
 
 gem 'searchkick', '~> 0.8.7'
 
+gem 'paperclip'
 
 gem 'bootstrap-sass', '~> 3.3.3'
-
-gem 'will_paginate', '~> 3.0.7'
-
-gem 'will_paginate-bootstrap', '~> 1.0.1'
 
 
 group :development, :test do
