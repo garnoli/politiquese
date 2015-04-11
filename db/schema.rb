@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150408164120) do
+ActiveRecord::Schema.define(version: 20150410152717) do
 
   create_table "despolitizous", force: :cascade do |t|
     t.text     "body"
@@ -38,11 +38,9 @@ ActiveRecord::Schema.define(version: 20150408164120) do
     t.integer  "politizacao_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
-    t.integer  "ponto"
   end
 
   add_index "politizous", ["politizacao_id"], name: "index_politizous_on_politizacao_id"
-  add_index "politizous", ["ponto"], name: "index_politizous_on_ponto"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

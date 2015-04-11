@@ -15,16 +15,22 @@ class PolitizacaosController < ApplicationController
   # GET /politizacaos.json
   def index
     @politizacaos = Politizacao.all.order('created_at DESC')
+    @politizous = Politizou.all
+
+    @despolitizous = Despolitizou.all
+
   end
 
   # GET /politizacaos/1
   # GET /politizacaos/1.json
   def show
+
   end
 
   # GET /politizacaos/new
   def new
-    @politizacao = current_user.politizacaos.build #adicionado current para criar id do user
+    @politizacao = current_user.politizacaos.build
+    #adicionado current para criar id do user
   end
 
   # GET /politizacaos/1/edit

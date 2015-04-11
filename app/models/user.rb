@@ -4,5 +4,5 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :politizacaos  #adicionado para fazer o relacionamento entre user e politizacaos
+  has_many :politizacaos #adicionado para fazer o relacionamento entre user e politizacaos
 end

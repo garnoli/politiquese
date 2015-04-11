@@ -1,5 +1,7 @@
 class PolitizousController < ApplicationController
-
+  def index
+    @politizous = Politizou.all
+  end
 
     def create
     @politizacao = Politizacao.find(params[:politizacao_id])

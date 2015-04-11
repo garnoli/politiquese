@@ -2,30 +2,31 @@
 <html>
 <head>
    <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Politiquese</title>  
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <title>Politique-se</title>
+  <%= stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 
   <!-- [if lt IE 9] -->
   <%= javascript_include_tag 'html5shiv.min.js', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'respond.min.js', 'data-turbolinks-track' => true %>      
+  <%= javascript_include_tag 'respond.min.js', 'data-turbolinks-track' => true %>
   <!--[endif] -->
 
 </head>
 <body>
 <br>
+        <nav class="navbar navbar-default" >
+          <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class=container>
+          <div class="navbar-header">
 
-<nav class="navbar navbar-default" role="navigation">
-  <div class="container">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
       </button>
-      <%= link_to "Politique-se", root_path, class: "navbar-brand" %> 
+      <%= link_to "Politique-se", root_path, class: "navbar-brand" %>
     </div>
 
 
@@ -33,28 +34,25 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
       <!-- lembrar de colocar aqui o if e else do usuario logado-->
-      
+
         <li ><%=link_to "Politização", politizacaos_path, class: "active" %></li>
-        <li ><%=link_to "Julgamento", "#", class: "active" %></li>
         <li ><%=link_to "Sobre o Politique-se", "#", class: "active" %></li>
         <li ><%=link_to "Account", edit_user_registration_path %></li>
-        <li ><%=link_to "Sign in", "#", class: "active" %></li>
-            
-      </ul>      
+
+
+      </ul>
 
       <%= form_tag search_politizacaos_path, method: :get, class: "navbar-form navbar-right", role: "search" do %>
         <p>
           <%= text_field_tag :search, params[:search], class: "form_control" %>
           <%= submit_tag "Search", name: nil, class: "btn btn-default" %>
         </p>
-      <% end %>    
-      
+      <% end %>
+
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-
- 
-
+</div>
 
       <p class="navbar-text pull-right">
         <% if user_signed_in? %>
@@ -78,16 +76,22 @@
 
 
 <div class="container">
-  <%= yield %>
+
+        <%= yield %>
+
 </div>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 
-<footer>
-  <div class="container">
-    Politique-se 2015
-  </div>
-</footer>
 
+
+<div class="navbar navbar-fixed-botton navbar-default "><!--fixed-botton, fixed-top-->
+            <div class="container">
+                <div class="navbar-header ">
+                  <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licença Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>Este obra está licenciado com uma Licença <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Atribuição-CompartilhaIgual 4.0 Internacional</a>
+                  <!-- <p><a href="" class="navbar-brand" >Politique-se 2015</a></p> -->
+                </div>
+            </div>
+        </div>
 
 
 </body>

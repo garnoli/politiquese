@@ -1,13 +1,27 @@
-<div class="politizou clearfix">
-  <div class="politizou_content">
+<div class="container">
+    <div class="row">
+      <div class="col-md-5">
 
-    <p class="politizou_body"><%= politizou.body %></p>
-    <p class="comment_time"><%= time_ago_in_words(politizou.created_at) %> Ago</p>
+            <table class="table table-striped">
+             <thead>
+              <tr>
+                <th>Texto</th>
+                <th>Criado em</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td><%= politizou.body %></td>
+                <td><%= time_ago_in_words(politizou.created_at) %> Ago</td>
+              </tr>
+               </tbody>
+            </table>
+
+              <p><%= link_to 'Delete', [politizou.politizacao, politizou],
+                method: :delete,
+                class: "button",
+                data: { confirm: 'Are you sure?' } %></p>
+              </div>
+
   </div>
-
-  <p><%= link_to 'Delete', [politizou.politizacao, politizou],
-    method: :delete,
-    class: "button",
-    data: { confirm: 'Are you sure?' } %></p>
-
 </div>

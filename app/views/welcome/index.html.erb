@@ -1,3 +1,57 @@
-<p><h1>Site em construção!</h1></p>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="container">
+          <div class="row">
+            <h1>Site em construção!</h1>
+          </div>
+        </div>
 
+        <div class="row">
+          <p><h1>As Mais Politizadas</h1></p>
+        </div>
+        <div class="well">
+        </div>
+      </div>
+
+      <p><%=Date.today %></p>
+      <h1>Últimas Politizações</h1>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Título</th>
+            <th>Texto</th>
+            <th>Politização</th>
+            <th>Despolitização</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @politizacaos.each do |politizacao| %>
+          <tr>
+            <td><%= politizacao.title %></td>
+            <td><%= simple_format(politizacao.body) %></td>
+            <!-- <td><%= politizacao.ponto%></td> -->
+            <td><%= politizacao.politizous.count %></td> <td><%= politizacao.despolitizous.count %></td>
+            <td>
+              <div class="btn-group pull-right" role="group">
+                <%= link_to 'Show', politizacao, :class => "btn btn-default btn-sm"%>
+                <% if politizacao.user == current_user %>
+                <%= link_to 'Edit', edit_politizacao_path(politizacao), :class => "btn btn-default btn-sm" %>
+                <%= link_to 'Destroy', politizacao, method: :delete, data: { confirm: 'Are you sure?' },  :class => "btn btn-default btn-sm" %>
+                <% end %>
+              </div>
+            </td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <br>
+      <%= button_to "Nova Politização", new_politizacao_path, :class => "btn btn-primary", :method => :get %>
+      <br/>
+      <br/>
+
+
+    </div>
+  </div>
+</div>
 
