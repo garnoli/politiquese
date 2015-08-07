@@ -27,8 +27,13 @@
             </tbody>
           </table>
 
-          <%= link_to 'Editar Politização', edit_politizacao_path(@politizacao) %>
-       <!-- Só pode editar politizacao, quem é dono dela-->
+          <% if user_signed_in? %>
+            <% if current_user.id.eql? @politizacao.user.id%>
+              <%= link_to 'Editar Politização', edit_politizacao_path(@politizacao) %>
+              <!-- Só pode editar politizacao, quem é dono dela-->
+            <% end %>
+          <% end %>
+
         </div>
       </div>
     </div>

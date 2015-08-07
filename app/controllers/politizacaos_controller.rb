@@ -43,8 +43,10 @@ class PolitizacaosController < ApplicationController
   # POST /politizacaos.json
   def create
     @politizacao = current_user.politizacaos.build(politizacao_params)  #adicionado current para criar id do user
+    @user=current_user
+    @user.pontos+=1
+    @user.save!
 
-    # @politizacao.ponto = pontuacao(@politizacao)
 
     respond_to do |format|
       if @politizacao.save

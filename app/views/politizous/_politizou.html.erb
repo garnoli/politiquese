@@ -7,20 +7,29 @@
               <tr>
                 <th>Texto</th>
                 <th>Criado em</th>
+
+
               </tr>
               </thead>
               <tbody>
               <tr>
                 <td><%= politizou.body %></td>
                 <td><%= time_ago_in_words(politizou.created_at) %> Ago</td>
+
               </tr>
                </tbody>
             </table>
 
-              <p><%= link_to 'Apagar', [politizou.politizacao, politizou],
+             <% if user_signed_in? %>
+                  <% if current_user.id.eql? politizou.user_id%>
+                    <p><%= link_to 'Apagar', [politizou.politizacao, politizou],
                 method: :delete,
                 class: "button",
                 data: { confirm: 'Você tem certeza disso?' } %></p>
+                <% end %>
+             <% end %>
+
+
               </div>
 
   </div>

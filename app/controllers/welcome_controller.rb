@@ -5,7 +5,25 @@ class WelcomeController < ApplicationController
     @politizous = Politizou.all
 
     @despolitizous = Despolitizou.all
+    @user=User.order(pontos: :desc , email: :asc).limit(3)
 
-  end
+
+    i=0
+    maior=0
+     Politizacao.all.each  do |politizada|
+        total = politizada.despolitizous.count + politizada.politizous.count
+        maior = total if i==0
+        if i != 0
+            if total > maior
+                maior = total
+                @maior_politizada = politizada
+            end
+        end
+        i += 1
+   end
+
+
+    end
+
 
 end

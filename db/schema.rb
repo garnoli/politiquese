@@ -11,13 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150411132154) do
+ActiveRecord::Schema.define(version: 20150803151404) do
 
   create_table "despolitizous", force: :cascade do |t|
     t.text     "body"
     t.integer  "politizacao_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+    t.integer  "user_id"
   end
 
   add_index "despolitizous", ["politizacao_id"], name: "index_despolitizous_on_politizacao_id"
@@ -46,6 +47,7 @@ ActiveRecord::Schema.define(version: 20150411132154) do
     t.integer  "politizacao_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+    t.integer  "user_id"
   end
 
   add_index "politizous", ["politizacao_id"], name: "index_politizous_on_politizacao_id"
@@ -63,6 +65,7 @@ ActiveRecord::Schema.define(version: 20150411132154) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "pontos",                 default: 0
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

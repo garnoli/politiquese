@@ -1,9 +1,10 @@
 @import "bootstrap";
+@import url(http://fonts.googleapis.com/css?family=Shadows+Into+Light);
 
 body{
     background-image: url("http://politique.se/imgpolitiquese.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+    /*background-repeat: no-repeat;
+    background-size: cover;*/
 }
 
 #politizacao_title {
@@ -39,7 +40,7 @@ h3{
 }
 
 div.navbar.navbar-fixed-botton.navbar-default{
-  margin-top: 0px;
+  margin-bottom: 0px;
 
 }
 
@@ -85,6 +86,21 @@ p.navbar-text.pull-right{
   margin-right: 110px;
   margin-bottom: 30px;
   margin-top: 0px;
+}
+
+.navbar{
+  margin-top: -20px;
+
+}
+
+.ranking{
+  float: right;
+
+}
+
+.titulo{
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 50px;
 }
 
 
@@ -133,5 +149,6 @@ p.navbar-text.pull-right{
     background-color: rgba(255,255,255, .23);
     border-bottom-color: transparent;
 }
+
 
 

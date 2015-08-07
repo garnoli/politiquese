@@ -1,6 +1,6 @@
 class Politizacao < ActiveRecord::Base
-  has_many :politizous
-  has_many :despolitizous
+  has_many :politizous, dependent: :destroy
+  has_many :despolitizous, dependent: :destroy
   searchkick
 
 
